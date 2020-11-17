@@ -10,7 +10,6 @@
 body {
     font-family: "Lato", sans-serif;
     background: url("../assets/images/code-bg.jpg") no-repeat;
-    background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
@@ -29,8 +28,8 @@ body::after {
 
 .wrapper {
     position: relative;
-    max-width: 100%;
     width: 650px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -310,4 +309,14 @@ input[type="checkbox"]:checked ~ .checkbox-mark {
 
 .submit-button:active {
     background: #472c8a;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    color: #fff;
+    font-weight: lighter;
+    text-align: center;
 }

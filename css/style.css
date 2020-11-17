@@ -11,6 +11,8 @@ body {
     font-family: "Lato", sans-serif;
     background: url("../assets/images/code-bg.jpg") no-repeat;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 body::after {
@@ -26,6 +28,7 @@ body::after {
 }
 
 .wrapper {
+    position: relative;
     max-width: 100%;
     width: 650px;
     margin: 0 auto;
@@ -115,6 +118,7 @@ input[type="number"]:focus {
 /* Select input */
 
 select {
+    position: relative;
     width: 100%;
     height: 56px;
     padding: 0 16px;
@@ -124,11 +128,34 @@ select {
     box-shadow: 0 4px 4px rgba(51, 51, 51, 0.04),
         0 4px 16px rgba(51, 51, 51, 0.08);
     transition: box-shadow 0.1s linear;
+    appearance: none;
+}
+
+.select-container {
+    position: relative;
+}
+
+.select-container::after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: block;
+    width: 15px;
+    height: 10px;
+    background: url("../assets/images/expand_more.svg") no-repeat;
 }
 
 select:focus {
     box-shadow: 0 4px 4px rgba(51, 51, 51, 0.04),
         0 4px 24px rgba(51, 51, 51, 0.24);
+}
+
+.features {
+    display: block;
+    margin-top: 40px;
 }
 
 /* Radio buttons */
@@ -142,12 +169,12 @@ input[type="radio"] {
 .radio-container {
     position: relative;
     display: block;
-    padding: 2px 0;
-    padding-left: 36px;
+    display: table;
+    padding: 2px 0 2px 36px;
     user-select: none;
 }
 
-.checkmark {
+.radio-checkmark {
     position: absolute;
     top: 2px;
     left: 0;
@@ -158,7 +185,7 @@ input[type="radio"] {
     transition: all 0.1s linear;
 }
 
-.checkmark::after {
+.radio-checkmark::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -172,16 +199,115 @@ input[type="radio"] {
     transition: opacity 0.1s linear;
 }
 
-.radio-container:hover input ~ .checkmark {
+.radio-container:hover input ~ .radio-checkmark {
     background: #6e41e2;
     opacity: 0.56;
 }
 
-.radio-container input:checked ~ .checkmark {
+.radio-container input:checked ~ .radio-checkmark {
     background: #6e41e2;
     opacity: 1;
 }
 
-input[type="radio"]:checked ~ .checkmark::after {
+input[type="radio"]:checked ~ .radio-checkmark::after {
     opacity: 1;
+}
+
+/* Checkboxes */
+
+.checkbox-wrapper {
+    margin-bottom: 40px;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    margin: 0;
+    opacity: 0;
+}
+
+.checkbox-container {
+    position: relative;
+    display: block;
+    display: table;
+    padding: 2px 0 2px 36px;
+    user-select: none;
+}
+
+.checkbox-mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border: solid 1px #d4d4d4;
+    border-radius: 4px;
+    transition: background 0.1s linear;
+}
+
+.checkbox-mark::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 11px;
+    height: 9px;
+    opacity: 0;
+    background: url("../assets/images/checked.svg");
+    transition: opacity 0.1s linear;
+}
+
+.checkbox-container input:hover ~ .checkbox-mark {
+    background: #fafafa;
+    border: solid 1px #d4d4d4;
+}
+
+input[type="checkbox"]:checked ~ .checkbox-mark::after {
+    opacity: 1;
+}
+
+input[type="checkbox"]:checked ~ .checkbox-mark {
+    background: #6e41e2;
+}
+
+/* Text area */
+
+.comments-textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 120px;
+    margin: 10px 0 30px;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 4px rgba(51, 51, 51, 0.04),
+        0 4px 16px rgba(51, 51, 51, 0.08);
+    transition: box-shadow 0.1s linear;
+}
+
+.comments-textarea:focus {
+    box-shadow: 0 4px 4px rgba(51, 51, 51, 0.04),
+        0 4px 24px rgba(51, 51, 51, 0.24);
+}
+
+/* Submit button */
+
+.submit-button {
+    width: 590px;
+    max-width: 100%;
+    padding: 15px 0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    background: #6e41e2;
+    transition: background 0.1s linear;
+}
+
+.submit-button:hover {
+    background: #5835b0;
+}
+
+.submit-button:active {
+    background: #472c8a;
 }

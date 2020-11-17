@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <title>Survey Form</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="header">
+                <h1 class="title">freeCodeCamp Survey Form</h1>
+                <h2 class="subtitle">
+                    Thank you for taking the time to help us improve the
+                    platform
+                </h2>
+            </header>
+            <div class="container">
+                <form action="#">
+                    <label for="name" id="name-label">Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    />
+
+                    <label for="email" id="email-label">Email</label>
+                    <input
+                        type="text"
+                        id="email"
+                        placeholder="Enter your Email"
+                        required
+                    />
+
+                    <label for="age" id="age-label">Age (optional)</label>
+                    <input
+                        type="number"
+                        id="name"
+                        placeholder="Age"
+                        min="10"
+                        max="100"
+                    />
+
+                    <label for="current-role">
+                        Which option best describes your current role?
+                    </label>
+                    <select
+                        name="current-role"
+                        id="current-role"
+                        aria-placeholder="dawd"
+                    >
+                        <option disabled selected value="Select current role">
+                            Select current role
+                        </option>
+                        <option value="Student">Student</option>
+                        <option value="Full Time Job">Full Time Job</option>
+                        <option value="Full Time Learner">
+                            Full Time Learner
+                        </option>
+                        <option value="Prefer not to say">
+                            Prefer not to say
+                        </option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <label>
+                        Would you recommend freeCodeCamp to a friend?
+                    </label>
+
+                    <label class="radio-container" for="definitely">
+                        Definitely
+                        <input
+                            type="radio"
+                            name="recomendation"
+                            id="definitely"
+                            checked
+                        />
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="radio-container" for="maybe">
+                        Maybe
+                        <input type="radio" name="recomendation" id="maybe" />
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="radio-container" for="not-sure">
+                        Not sure
+                        <input
+                            type="radio"
+                            name="recomendation"
+                            id="not-sure"
+                        />
+                        <span class="checkmark"></span>
+                    </label>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

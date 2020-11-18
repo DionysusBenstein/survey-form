@@ -252,7 +252,7 @@ input[type="checkbox"] {
     width: 11px;
     height: 9px;
     opacity: 0;
-    background: url("../assets/images/checked.svg");
+    background: url("../assets/images/checked.svg") no-repeat;
     transition: opacity 0.1s linear;
 }
 
